@@ -1,4 +1,4 @@
-# tagger script by @bdsqlsz
+# run script by @bdsqlsz
 
 # Activate python venv
 Set-Location $PSScriptRoot
@@ -24,8 +24,8 @@ elseif (Test-Path "./.venv/bin/activate") {
 $Env:HF_HOME = "huggingface"
 #$Env:HF_ENDPOINT = "https://hf-mirror.com"
 $Env:XFORMERS_FORCE_DISABLE_TRITON = "1"
-#$Env:ATTN_BACKEND = "xformers"
-#$Env:SPCONV_ALGO = "native"
+$Env:ATTN_BACKEND = "xformers"
+$Env:SPCONV_ALGO = "native"
 
 python app.py
 
